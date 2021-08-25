@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		514681E926D4817100188839 /* Vec2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681E726D4817100188839 /* Vec2D.cpp */; };
 		514681EC26D4858000188839 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681EA26D4858000188839 /* Utils.cpp */; };
+		51D11DD026D6C3CC00724AE9 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */; };
 		51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51F9D8AF26D1E37A00B4CAAC /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		514681E826D4817100188839 /* Vec2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vec2D.hpp; sourceTree = "<group>"; };
 		514681EA26D4858000188839 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		514681EB26D4858000188839 /* Utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
+		51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2/2.0.16/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		51F9D8AC26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyArcadeSDL2; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F9D8AF26D1E37A00B4CAAC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D11DD026D6C3CC00724AE9 /* libSDL2-2.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,11 +58,20 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		51D11DCE26D6C3CC00724AE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		51F9D8A326D1E37A00B4CAAC = {
 			isa = PBXGroup;
 			children = (
 				51F9D8AE26D1E37A00B4CAAC /* MyArcadeSDL2 */,
 				51F9D8AD26D1E37A00B4CAAC /* Products */,
+				51D11DCE26D6C3CC00724AE9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,6 +272,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.16/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -268,6 +285,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/sdl2/2.0.16/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
