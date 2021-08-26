@@ -8,28 +8,13 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-/*
- To install SDL2:
- 1. go to website brew.sh, and use terminal to install homebrew
- 2. in terminal, type "brew install sdl2" to install SDL2
- 
- To use SDL2 in a project (xcode):
- 1. create a project in xcode
- 2. go to targets
-        -> build settings
-        -> type "search" in search bar
-        -> add "/usr/local/include" in Header Search Paths
- 3. go to build phases
-        -> link binary with libraries, and add
-        -> add others, add files
-        -> press "cmd + shift + g" at the pop up window
-        -> go to the folder "/usr/local/Cellar"
-        -> choose "sdl2/2.0.16/lib/libSDL2-2.0.0.dylib"
- 4. we now can type #include <SDL2/SDL.h> to use it
- */
+#include "Color.hpp"
 
 const int SCREEN_WIDTH = 224;
 const int SCREEN_HEIGHT = 288;
+
+void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y);
+size_t GetIndex(SDL_Surface* noptrSurface, int r, int c);
 
 int main(int argc, const char * argv[])
 {
@@ -46,6 +31,18 @@ int main(int argc, const char * argv[])
         std::cout << "Could not create window, got error: " << SDL_GetError() << std::endl;
         return 1;
     }
+    
+    SDL_Surface* noptrWindowSurface = SDL_GetWindowSurface(optrWindow);
+    
+    SDL_PixelFormat* pixelFormat = noptrWindowSurface->format;
+    
+    Color::InitColorFormat(pixelFormat);
+        
+    std::cout << "The window pixel format is: " << SDL_GetPixelFormatName(pixelFormat->format);
+    
+    SetPixel(noptrWindowSurface, Color::Orange().GetPixelColor(), SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    
+    SDL_UpdateWindowSurface(optrWindow);
     
     SDL_Event sdlEvent;
     bool running = true;
@@ -66,4 +63,22 @@ int main(int argc, const char * argv[])
     SDL_Quit();
     
     return 0;
+}
+
+void SetPixel(SDL_Surface* noptrWindowSurface, uint32_t color, int x, int y)
+{
+    SDL_LockSurface(noptrWindowSurface);
+    
+    uint32_t* pixels = (uint32_t*) noptrWindowSurface->pixels;
+    
+    size_t index = GetIndex(noptrWindowSurface, y, x);
+    
+    pixels[index] = color;
+    
+    SDL_UnlockSurface(noptrWindowSurface);
+}
+
+size_t GetIndex(SDL_Surface* noptrSurface, int r, int c)
+{
+    return r * noptrSurface->w + c;
 }
