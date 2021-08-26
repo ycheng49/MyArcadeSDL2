@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		512A602B26D7E48200994554 /* Line2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A602926D7E48200994554 /* Line2D.cpp */; };
 		514681E926D4817100188839 /* Vec2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681E726D4817100188839 /* Vec2D.cpp */; };
 		514681EC26D4858000188839 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681EA26D4858000188839 /* Utils.cpp */; };
 		51D11DD026D6C3CC00724AE9 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		512A602926D7E48200994554 /* Line2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Line2D.cpp; sourceTree = "<group>"; };
+		512A602A26D7E48200994554 /* Line2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Line2D.hpp; sourceTree = "<group>"; };
 		514681E726D4817100188839 /* Vec2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2D.cpp; sourceTree = "<group>"; };
 		514681E826D4817100188839 /* Vec2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vec2D.hpp; sourceTree = "<group>"; };
 		514681EA26D4858000188839 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
@@ -56,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		512A602826D7E46A00994554 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				512A602926D7E48200994554 /* Line2D.cpp */,
+				512A602A26D7E48200994554 /* Line2D.hpp */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		514681E626D4813F00188839 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 		51F9D8AE26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {
 			isa = PBXGroup;
 			children = (
+				512A602826D7E46A00994554 /* Shapes */,
 				51D11DD126D7268900724AE9 /* Graphics */,
 				514681E626D4813F00188839 /* Utils */,
 				51F9D8AF26D1E37A00B4CAAC /* main.cpp */,
@@ -173,6 +186,7 @@
 			files = (
 				514681E926D4817100188839 /* Vec2D.cpp in Sources */,
 				51D11DD426D726B400724AE9 /* Color.cpp in Sources */,
+				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
 				51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */,
 				514681EC26D4858000188839 /* Utils.cpp in Sources */,
 				51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */,

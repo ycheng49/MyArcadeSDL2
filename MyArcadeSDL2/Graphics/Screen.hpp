@@ -14,6 +14,7 @@
 #include "Color.hpp"
 
 class Vec2D;
+class Line2D;
 
 struct SDL_Window;
 struct SDL_Surface;
@@ -32,9 +33,10 @@ public:
     inline uint32_t Width() const {return mWidth;}
     inline uint32_t Height() const {return mHeight;}
     
-    // Draw Methods go here
+    // Draw Methods go here (Bresenham's line algorithm)
     void Draw(int x, int y, const Color& color);
     void Draw(const Vec2D& point, const Color& color);
+    void Draw(const Line2D& line, const Color& color);
     
 private:
     
