@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		512A602B26D7E48200994554 /* Line2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A602926D7E48200994554 /* Line2D.cpp */; };
+		512A602E26D8892300994554 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A602C26D8892300994554 /* Shape.cpp */; };
+		512A603126D88AD100994554 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A602F26D88AD100994554 /* Triangle.cpp */; };
+		512A603426D8910C00994554 /* AARectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A603226D8910C00994554 /* AARectangle.cpp */; };
+		512A603726D89E8F00994554 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A603526D89E8F00994554 /* Circle.cpp */; };
 		514681E926D4817100188839 /* Vec2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681E726D4817100188839 /* Vec2D.cpp */; };
 		514681EC26D4858000188839 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681EA26D4858000188839 /* Utils.cpp */; };
 		51D11DD026D6C3CC00724AE9 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */; };
@@ -32,6 +36,14 @@
 /* Begin PBXFileReference section */
 		512A602926D7E48200994554 /* Line2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Line2D.cpp; sourceTree = "<group>"; };
 		512A602A26D7E48200994554 /* Line2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Line2D.hpp; sourceTree = "<group>"; };
+		512A602C26D8892300994554 /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		512A602D26D8892300994554 /* Shape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shape.hpp; sourceTree = "<group>"; };
+		512A602F26D88AD100994554 /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		512A603026D88AD100994554 /* Triangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Triangle.hpp; sourceTree = "<group>"; };
+		512A603226D8910C00994554 /* AARectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AARectangle.cpp; sourceTree = "<group>"; };
+		512A603326D8910C00994554 /* AARectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AARectangle.hpp; sourceTree = "<group>"; };
+		512A603526D89E8F00994554 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
+		512A603626D89E8F00994554 /* Circle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Circle.hpp; sourceTree = "<group>"; };
 		514681E726D4817100188839 /* Vec2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2D.cpp; sourceTree = "<group>"; };
 		514681E826D4817100188839 /* Vec2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vec2D.hpp; sourceTree = "<group>"; };
 		514681EA26D4858000188839 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
@@ -64,6 +76,14 @@
 			children = (
 				512A602926D7E48200994554 /* Line2D.cpp */,
 				512A602A26D7E48200994554 /* Line2D.hpp */,
+				512A602C26D8892300994554 /* Shape.cpp */,
+				512A602D26D8892300994554 /* Shape.hpp */,
+				512A602F26D88AD100994554 /* Triangle.cpp */,
+				512A603026D88AD100994554 /* Triangle.hpp */,
+				512A603226D8910C00994554 /* AARectangle.cpp */,
+				512A603326D8910C00994554 /* AARectangle.hpp */,
+				512A603526D89E8F00994554 /* Circle.cpp */,
+				512A603626D89E8F00994554 /* Circle.hpp */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -186,10 +206,14 @@
 			files = (
 				514681E926D4817100188839 /* Vec2D.cpp in Sources */,
 				51D11DD426D726B400724AE9 /* Color.cpp in Sources */,
+				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
+				512A602E26D8892300994554 /* Shape.cpp in Sources */,
 				51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */,
+				512A603426D8910C00994554 /* AARectangle.cpp in Sources */,
 				514681EC26D4858000188839 /* Utils.cpp in Sources */,
 				51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */,
+				512A603126D88AD100994554 /* Triangle.cpp in Sources */,
 				51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
