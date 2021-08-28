@@ -113,3 +113,23 @@ uint8_t Color::GetAlpha() const
     SDL_GetRGBA(mColor, mFormat, &r, &g, &b, &a);
     return a;
 }
+
+Color Color::Evaluate1MinusSourceAlpha(const Color& source, const Color& destination)
+{
+    // blending equation:
+    // SourceRGB * SourceAlpha + DestinationRGB * (1 - SourceAlpha)
+    
+    uint8_t alpha = source.GetAlpha();
+    
+    float sourceAlpha = float(alpha) / 255.0f;
+    float destAlpha = 1.0 - sourceAlpha;
+    
+    Color outColor;
+    
+    outColor.SetAlpha(255);
+    outColor.SetRed(float(source.GetRed()) * sourceAlpha + float(destination.GetRed()) * destAlpha);
+    outColor.SetGreen(float(source.GetGreen()) * sourceAlpha + float(destination.GetGreen()) * destAlpha);
+    outColor.SetBlue(float(source.GetBlue()) * sourceAlpha + float(destination.GetBlue()) * destAlpha);
+    
+    return outColor;
+}
