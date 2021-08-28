@@ -31,13 +31,13 @@ int main(int argc, const char * argv[])
     theScreen.Draw(line, Color::White());
     
     Triangle triangle = {Vec2D(60, 10), Vec2D(10, 110), Vec2D(110, 110)};
-    theScreen.Draw(triangle, Color::Red());
+    theScreen.Draw(triangle, Color::Red(), true, Color::Red());
     
     AARectangle rect = {Vec2D(SCREEN_WIDTH / 2 - 25, SCREEN_HEIGHT / 2 - 25), 50, 50};
-    theScreen.Draw(rect, Color::Blue());
+    theScreen.Draw(rect, Color::Blue(), true, Color::Blue());
     
     Circle circle = {Vec2D(SCREEN_WIDTH / 2 + 50, SCREEN_HEIGHT / 2 + 50), 50};
-    theScreen.Draw(circle, Color::Pink());
+    theScreen.Draw(circle, Color::Pink(), true, Color::Pink());
     
     theScreen.SwapScreens();
     
