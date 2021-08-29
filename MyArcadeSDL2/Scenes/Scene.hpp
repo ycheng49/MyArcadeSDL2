@@ -12,6 +12,7 @@
 #include <stdint.h>
 
 #include "Screen.hpp"
+#include "GameController.hpp"
 
 // this is an interface class
 class Scene
@@ -23,6 +24,12 @@ public:
     virtual void Update(uint32_t dt) = 0;
     virtual void Draw(Screen& theScreen) = 0;
     virtual const std::string& GetSceneName() const = 0;
+    
+    GameController* GetGameController() {return &mGameController;}
+    
+protected:
+    
+    GameController mGameController;
 };
 
 #endif /* Scene_hpp */
