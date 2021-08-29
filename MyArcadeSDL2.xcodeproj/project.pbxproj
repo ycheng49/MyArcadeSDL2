@@ -19,6 +19,7 @@
 		51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51D11DD526D73B7D00724AE9 /* ScreenBuffer.cpp */; };
 		51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51D11DD826D7C30A00724AE9 /* Screen.cpp */; };
 		51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51F9D8AF26D1E37A00B4CAAC /* main.cpp */; };
+		51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD30A26DB3BA4000FE171 /* App.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,8 @@
 		51D11DD926D7C30A00724AE9 /* Screen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Screen.hpp; sourceTree = "<group>"; };
 		51F9D8AC26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyArcadeSDL2; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F9D8AF26D1E37A00B4CAAC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		51FBD30A26DB3BA4000FE171 /* App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
+		51FBD30B26DB3BA4000FE171 /* App.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = App.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,12 +143,22 @@
 		51F9D8AE26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {
 			isa = PBXGroup;
 			children = (
+				51FBD30926DB3B8E000FE171 /* App */,
 				512A602826D7E46A00994554 /* Shapes */,
 				51D11DD126D7268900724AE9 /* Graphics */,
 				514681E626D4813F00188839 /* Utils */,
 				51F9D8AF26D1E37A00B4CAAC /* main.cpp */,
 			);
 			path = MyArcadeSDL2;
+			sourceTree = "<group>";
+		};
+		51FBD30926DB3B8E000FE171 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				51FBD30A26DB3BA4000FE171 /* App.cpp */,
+				51FBD30B26DB3BA4000FE171 /* App.hpp */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +226,7 @@
 				512A603426D8910C00994554 /* AARectangle.cpp in Sources */,
 				514681EC26D4858000188839 /* Utils.cpp in Sources */,
 				51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */,
+				51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */,
 				512A603126D88AD100994554 /* Triangle.cpp in Sources */,
 				51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */,
 			);
