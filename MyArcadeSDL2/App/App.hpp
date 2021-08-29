@@ -14,6 +14,7 @@
 
 #include "Screen.hpp"
 #include "Scene.hpp"
+#include "InputController.hpp"
 
 struct SDL_Window;
 
@@ -40,6 +41,7 @@ private:
     SDL_Window* mnoptrWindow;
     
     std::vector<std::unique_ptr<Scene>> mSceneStack;
+    InputController mInputController;
 };
 
 #endif /* App_hpp */

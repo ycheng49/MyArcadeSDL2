@@ -41,6 +41,11 @@ void App::Run()
         
         uint32_t dt = 10;       // in miliseconds
         uint32_t accumulator = 0;
+        
+        mInputController.Init([&running](uint32_t dt, InputState state)
+        {
+            running = false;
+        });
                 
         while(running)
         {
@@ -58,15 +63,7 @@ void App::Run()
             accumulator += frameTime;
             
             // input
-            while(SDL_PollEvent(&sdlEvent))
-            {
-                switch(sdlEvent.type)
-                {
-                    case SDL_QUIT:
-                        running = false;
-                        break;
-                }
-            }
+            mInputController.Update(dt);
             
             Scene* topScene = App::TopScene();
             
@@ -79,9 +76,7 @@ void App::Run()
                 {
                     // update current scene by dt
                     topScene->Update(dt);
-                    
-                    std::cout << "Delta time step: " << dt << std::endl;
-                    
+                                        
                     accumulator -= dt;
                 }
                 
@@ -101,7 +96,11 @@ void App::PushScene(std::unique_ptr<Scene> scene)
     if(scene)
     {
         scene->Init();
+        
+        mInputController.SetGameController(scene->GetGameController());
+        
         mSceneStack.emplace_back(std::move(scene));
+        
         SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
     }
 }
@@ -115,6 +114,8 @@ void App::PopScene()
     
     if(TopScene())
     {
+        mInputController.SetGameController(TopScene()->GetGameController());
+
         SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Yijie Cheng on 8/29/21.
 //
 
+#include <iostream>
+
 #include "ArcadeScene.hpp"
 #include "Screen.hpp"
 #include "AARectangle.hpp"
@@ -12,12 +14,26 @@
 #include "Circle.hpp"
 #include "Line2D.hpp"
 #include "Color.hpp"
+#include "GameController.hpp"
 
 ArcadeScene::ArcadeScene()
 {}
 
 void ArcadeScene::Init()
-{}
+{
+    ButtonAction action;
+    
+    action.key = GameController::ActionKey();
+    action.action = [](uint32_t dt, InputState state)
+    {
+        if(GameController::IsPressed(state))
+        {
+            std::cout << "Action button was pressed!" << std::endl;
+        }
+    };
+    
+    mGameController.AddInputActionForKey(action);
+}
 
 void ArcadeScene::Update(uint32_t dt)
 {}
@@ -49,31 +65,31 @@ std::unique_ptr<Scene> ArcadeScene::GetScene(eGame game)
         {
             
         }
-        break;
+            break;
             
         case BREAK_OUT:
         {
             
         }
-        break;
+            break;
             
         case ASTEROIDS:
         {
             
         }
-        break;
+            break;
             
         case PACMAN:
         {
             
         }
-        break;
+            break;
             
         default:
         {
             
         }
-        break;
+            break;
     }
     
     return nullptr;

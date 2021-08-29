@@ -22,6 +22,7 @@
 		51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD30A26DB3BA4000FE171 /* App.cpp */; };
 		51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */; };
 		51FBD31E26DC2973000FE171 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31C26DC2973000FE171 /* GameController.cpp */; };
+		51FBD32126DC324E000FE171 /* InputController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31F26DC324E000FE171 /* InputController.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +69,8 @@
 		51FBD31A26DC2505000FE171 /* InputAction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputAction.hpp; sourceTree = "<group>"; };
 		51FBD31C26DC2973000FE171 /* GameController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
 		51FBD31D26DC2973000FE171 /* GameController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
+		51FBD31F26DC324E000FE171 /* InputController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputController.cpp; sourceTree = "<group>"; };
+		51FBD32026DC324E000FE171 /* InputController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputController.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +190,8 @@
 				51FBD31A26DC2505000FE171 /* InputAction.hpp */,
 				51FBD31C26DC2973000FE171 /* GameController.cpp */,
 				51FBD31D26DC2973000FE171 /* GameController.hpp */,
+				51FBD31F26DC324E000FE171 /* InputController.cpp */,
+				51FBD32026DC324E000FE171 /* InputController.hpp */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				51D11DD426D726B400724AE9 /* Color.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
+				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,
 				512A602E26D8892300994554 /* Shape.cpp in Sources */,
 				51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */,
 				512A603426D8910C00994554 /* AARectangle.cpp in Sources */,
