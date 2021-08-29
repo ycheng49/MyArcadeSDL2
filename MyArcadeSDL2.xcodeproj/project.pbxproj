@@ -20,6 +20,7 @@
 		51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51D11DD826D7C30A00724AE9 /* Screen.cpp */; };
 		51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51F9D8AF26D1E37A00B4CAAC /* main.cpp */; };
 		51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD30A26DB3BA4000FE171 /* App.cpp */; };
+		51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,9 @@
 		51F9D8AF26D1E37A00B4CAAC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		51FBD30A26DB3BA4000FE171 /* App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = App.cpp; sourceTree = "<group>"; };
 		51FBD30B26DB3BA4000FE171 /* App.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = App.hpp; sourceTree = "<group>"; };
+		51FBD31326DBF4A9000FE171 /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
+		51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArcadeScene.cpp; sourceTree = "<group>"; };
+		51FBD31626DBF5B3000FE171 /* ArcadeScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArcadeScene.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		51F9D8AE26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {
 			isa = PBXGroup;
 			children = (
+				51FBD31126DBF49B000FE171 /* Scenes */,
 				51FBD30926DB3B8E000FE171 /* App */,
 				512A602826D7E46A00994554 /* Shapes */,
 				51D11DD126D7268900724AE9 /* Graphics */,
@@ -159,6 +164,16 @@
 				51FBD30B26DB3BA4000FE171 /* App.hpp */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		51FBD31126DBF49B000FE171 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				51FBD31326DBF4A9000FE171 /* Scene.hpp */,
+				51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */,
+				51FBD31626DBF5B3000FE171 /* ArcadeScene.hpp */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +241,7 @@
 				512A603426D8910C00994554 /* AARectangle.cpp in Sources */,
 				514681EC26D4858000188839 /* Utils.cpp in Sources */,
 				51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */,
+				51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */,
 				51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */,
 				512A603126D88AD100994554 /* Triangle.cpp in Sources */,
 				51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */,

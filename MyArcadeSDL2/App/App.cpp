@@ -7,13 +7,10 @@
 
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <cassert>
 
 #include "App.hpp"
-#include "Line2D.hpp"
-#include "Triangle.hpp"
-#include "AARectangle.hpp"
-#include "Circle.hpp"
-#include "Color.hpp"
+#include "ArcadeScene.hpp"
 
 App& App::Singleton()
 {
@@ -25,6 +22,10 @@ bool App::Init(uint32_t width, uint32_t height, uint32_t mag)
 {
     mnoptrWindow = mScreen.Init(width, height, mag);
     
+    std::unique_ptr<ArcadeScene> arcadeScene = std::make_unique<ArcadeScene>();
+    
+    PushScene(std::move(arcadeScene));
+    
     return mnoptrWindow != nullptr;
 }
 
@@ -32,11 +33,6 @@ void App::Run()
 {
     if(mnoptrWindow)
     {
-        Line2D line = {Vec2D(0,0), Vec2D(mScreen.Width(), mScreen.Height())};
-        Triangle triangle = {Vec2D(60, 10), Vec2D(10, 110), Vec2D(110, 110)};
-        AARectangle rect = {Vec2D(mScreen.Width() / 2 - 25, mScreen.Height() / 2 - 25), 50, 50};
-        Circle circle = {Vec2D(mScreen.Width() / 2 + 50, mScreen.Height() / 2 + 50), 50};
-                
         SDL_Event sdlEvent;
         bool running = true;
         
@@ -45,7 +41,7 @@ void App::Run()
         
         uint32_t dt = 10;       // in miliseconds
         uint32_t accumulator = 0;
-        
+                
         while(running)
         {
             currentTick = SDL_GetTicks();
@@ -64,29 +60,71 @@ void App::Run()
             // input
             while(SDL_PollEvent(&sdlEvent))
             {
-                switch (sdlEvent.type) {
+                switch(sdlEvent.type)
+                {
                     case SDL_QUIT:
                         running = false;
                         break;
                 }
             }
             
-            // update
-            while(accumulator >= dt)
-            {
-                // update current scene by dt
-                std::cout << "Delta time step: " << dt << std::endl;
-                
-                accumulator -= dt;
-            }
+            Scene* topScene = App::TopScene();
             
-            // render
-            mScreen.Draw(line, Color::White());
-            mScreen.Draw(triangle, Color::Red(), true, Color::Red());
-            mScreen.Draw(rect, Color::Blue(), true, Color(0, 0, 255, 140));
-            mScreen.Draw(circle, Color(0, 255, 0, 150), true, Color(0, 255, 0, 150));
+            assert(topScene && "Why don't have a scene?");
+            
+            if(topScene)
+            {
+                // update
+                while(accumulator >= dt)
+                {
+                    // update current scene by dt
+                    topScene->Update(dt);
+                    
+                    std::cout << "Delta time step: " << dt << std::endl;
+                    
+                    accumulator -= dt;
+                }
+                
+                // render
+                topScene->Draw(mScreen);
+            }
             
             mScreen.SwapScreens();
         }
     }
+}
+
+void App::PushScene(std::unique_ptr<Scene> scene)
+{
+    assert(scene && "Don't push nullptr");
+    
+    if(scene)
+    {
+        scene->Init();
+        mSceneStack.emplace_back(std::move(scene));
+        SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
+    }
+}
+
+void App::PopScene()
+{
+    if(mSceneStack.size() > 1)
+    {
+        mSceneStack.pop_back();
+    }
+    
+    if(TopScene())
+    {
+        SDL_SetWindowTitle(mnoptrWindow, TopScene()->GetSceneName().c_str());
+    }
+}
+
+Scene* App::TopScene()
+{
+    if(mSceneStack.empty())
+    {
+        return nullptr;
+    }
+    
+    return mSceneStack.back().get();
 }
