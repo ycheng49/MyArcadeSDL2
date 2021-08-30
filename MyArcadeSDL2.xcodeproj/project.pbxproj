@@ -24,6 +24,7 @@
 		51FBD31E26DC2973000FE171 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31C26DC2973000FE171 /* GameController.cpp */; };
 		51FBD32126DC324E000FE171 /* InputController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31F26DC324E000FE171 /* InputController.cpp */; };
 		51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32626DC7F63000FE171 /* GameScene.cpp */; };
+		51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +76,8 @@
 		51FBD32426DC7ED6000FE171 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		51FBD32626DC7F63000FE171 /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		51FBD32726DC7F63000FE171 /* GameScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameScene.hpp; sourceTree = "<group>"; };
+		51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileCommandLoader.cpp; sourceTree = "<group>"; };
+		51FBD32A26DD1F23000FE171 /* FileCommandLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileCommandLoader.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				514681E826D4817100188839 /* Vec2D.hpp */,
 				514681EA26D4858000188839 /* Utils.cpp */,
 				514681EB26D4858000188839 /* Utils.hpp */,
+				51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */,
+				51FBD32A26DD1F23000FE171 /* FileCommandLoader.hpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			files = (
 				514681E926D4817100188839 /* Vec2D.cpp in Sources */,
 				51D11DD426D726B400724AE9 /* Color.cpp in Sources */,
+				51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */,
 				51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
