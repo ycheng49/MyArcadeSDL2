@@ -23,6 +23,7 @@
 		51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */; };
 		51FBD31E26DC2973000FE171 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31C26DC2973000FE171 /* GameController.cpp */; };
 		51FBD32126DC324E000FE171 /* InputController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31F26DC324E000FE171 /* InputController.cpp */; };
+		51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32626DC7F63000FE171 /* GameScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,9 @@
 		51FBD31D26DC2973000FE171 /* GameController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameController.hpp; sourceTree = "<group>"; };
 		51FBD31F26DC324E000FE171 /* InputController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InputController.cpp; sourceTree = "<group>"; };
 		51FBD32026DC324E000FE171 /* InputController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InputController.hpp; sourceTree = "<group>"; };
+		51FBD32426DC7ED6000FE171 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		51FBD32626DC7F63000FE171 /* GameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		51FBD32726DC7F63000FE171 /* GameScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameScene.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		51F9D8AE26D1E37A00B4CAAC /* MyArcadeSDL2 */ = {
 			isa = PBXGroup;
 			children = (
+				51FBD32226DC7EA5000FE171 /* Games */,
 				51FBD31826DC24D7000FE171 /* Input */,
 				51FBD31126DBF49B000FE171 /* Scenes */,
 				51FBD30926DB3B8E000FE171 /* App */,
@@ -180,6 +185,8 @@
 				51FBD31326DBF4A9000FE171 /* Scene.hpp */,
 				51FBD31526DBF5B3000FE171 /* ArcadeScene.cpp */,
 				51FBD31626DBF5B3000FE171 /* ArcadeScene.hpp */,
+				51FBD32626DC7F63000FE171 /* GameScene.cpp */,
+				51FBD32726DC7F63000FE171 /* GameScene.hpp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -194,6 +201,14 @@
 				51FBD32026DC324E000FE171 /* InputController.hpp */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		51FBD32226DC7EA5000FE171 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				51FBD32426DC7ED6000FE171 /* Game.hpp */,
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +269,7 @@
 			files = (
 				514681E926D4817100188839 /* Vec2D.cpp in Sources */,
 				51D11DD426D726B400724AE9 /* Color.cpp in Sources */,
+				51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
 				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,
