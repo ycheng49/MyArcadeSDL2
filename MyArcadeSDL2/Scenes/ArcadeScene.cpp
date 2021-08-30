@@ -21,6 +21,7 @@ ArcadeScene::ArcadeScene()
 
 void ArcadeScene::Init()
 {
+    // test keyboard action button 'a'
     ButtonAction action;
     
     action.key = GameController::ActionKey();
@@ -33,6 +34,26 @@ void ArcadeScene::Init()
     };
     
     mGameController.AddInputActionForKey(action);
+    
+    // test mouse left button
+    MouseButtonAction mouseAction;
+    
+    mouseAction.mouseButton = GameController::LeftMouseButton();
+    mouseAction.mouseInputAction = [](InputState state, const MousePosition& position)
+    {
+        if(GameController::IsPressed(state))
+        {
+            std::cout << "Left mouse button was pressed!" << std::endl;
+        }
+    };
+    
+    mGameController.AddMouseButtonAction(mouseAction);
+    
+    // test mouse move position
+    mGameController.SetMouseMovedAction([](const MousePosition& mousePosition)
+    {
+        std::cout << "Mouse position x: " << mousePosition.xPos << ", y: " << mousePosition.yPos << std::endl;
+    });
 }
 
 void ArcadeScene::Update(uint32_t dt)
@@ -63,33 +84,28 @@ std::unique_ptr<Scene> ArcadeScene::GetScene(eGame game)
     {
         case TETRIS:
         {
-            
-        }
             break;
+        }
             
         case BREAK_OUT:
         {
-            
-        }
             break;
+        }
             
         case ASTEROIDS:
         {
-            
-        }
             break;
+        }
             
         case PACMAN:
         {
-            
-        }
             break;
+        }
             
         default:
         {
-            
-        }
             break;
+        }
     }
     
     return nullptr;
