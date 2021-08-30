@@ -10,7 +10,7 @@
 
 #include "InputAction.hpp"
 
-struct GameController;
+class GameController;
 
 class InputController
 {
