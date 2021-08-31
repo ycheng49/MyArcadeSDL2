@@ -61,3 +61,12 @@ void Ball::MoveTo(const Vec2D& point)
 {
     mBBox.MoveTo(point - Vec2D(GetRadius(), GetRadius()));
 }
+
+void Ball::Bounce(const BoundaryEdge& edge)
+{
+    Vec2D pointOnEdge;
+    
+    MakeFlushWithEdge(edge, pointOnEdge, false);
+    
+    mVelocity = mVelocity.Reflect(edge.normal);
+}

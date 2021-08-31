@@ -11,6 +11,7 @@
 #include "Game.hpp"
 #include "Paddle.hpp"
 #include "Ball.hpp"
+#include "LevelBoundary.hpp"
 
 class BreakOut : public Game
 {
@@ -25,8 +26,11 @@ private:
     
     void ResetGame();
     
+    const Vec2D INITIAL_BALL_VEL = Vec2D(100, -100);
+    
     Paddle mPaddle;
     Ball mBall;
+    LevelBoundary mLevelBoundary;
 };
 
 #endif /* BreakOut_hpp */
