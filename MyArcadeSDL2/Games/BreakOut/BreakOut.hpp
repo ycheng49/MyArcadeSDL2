@@ -9,6 +9,7 @@
 #define BreakOut_hpp
 
 #include "Game.hpp"
+#include "Paddle.hpp"
 
 class BreakOut : public Game
 {
@@ -18,6 +19,12 @@ public:
     virtual void Update(uint32_t dt) override;
     virtual void Draw(Screen& screen) override;
     virtual std::string GetName() const override;
+    
+private:
+    
+    void ResetGame();
+    
+    Paddle mPaddle;
 };
 
 #endif /* BreakOut_hpp */
