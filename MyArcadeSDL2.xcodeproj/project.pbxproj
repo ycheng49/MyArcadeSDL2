@@ -26,6 +26,7 @@
 		51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32626DC7F63000FE171 /* GameScene.cpp */; };
 		51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */; };
 		51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32C26DDC22A000FE171 /* BreakOut.cpp */; };
+		51FBD33526DDD097000FE171 /* Excluder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33326DDD097000FE171 /* Excluder.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +82,9 @@
 		51FBD32A26DD1F23000FE171 /* FileCommandLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileCommandLoader.hpp; sourceTree = "<group>"; };
 		51FBD32C26DDC22A000FE171 /* BreakOut.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BreakOut.cpp; sourceTree = "<group>"; };
 		51FBD32D26DDC22A000FE171 /* BreakOut.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BreakOut.hpp; sourceTree = "<group>"; };
+		51FBD33326DDD097000FE171 /* Excluder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Excluder.cpp; sourceTree = "<group>"; };
+		51FBD33426DDD097000FE171 /* Excluder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Excluder.hpp; sourceTree = "<group>"; };
+		51FBD33726DDD195000FE171 /* BoundaryEdge.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoundaryEdge.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,11 +218,22 @@
 		51FBD32226DC7EA5000FE171 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				51FBD33226DDCDA1000FE171 /* BreakOut */,
 				51FBD32426DC7ED6000FE171 /* Game.hpp */,
-				51FBD32C26DDC22A000FE171 /* BreakOut.cpp */,
-				51FBD32D26DDC22A000FE171 /* BreakOut.hpp */,
 			);
 			path = Games;
+			sourceTree = "<group>";
+		};
+		51FBD33226DDCDA1000FE171 /* BreakOut */ = {
+			isa = PBXGroup;
+			children = (
+				51FBD32C26DDC22A000FE171 /* BreakOut.cpp */,
+				51FBD32D26DDC22A000FE171 /* BreakOut.hpp */,
+				51FBD33326DDD097000FE171 /* Excluder.cpp */,
+				51FBD33426DDD097000FE171 /* Excluder.hpp */,
+				51FBD33726DDD195000FE171 /* BoundaryEdge.hpp */,
+			);
+			path = BreakOut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +309,7 @@
 				51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */,
 				51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */,
 				512A603126D88AD100994554 /* Triangle.cpp in Sources */,
+				51FBD33526DDD097000FE171 /* Excluder.cpp in Sources */,
 				51D11DDA26D7C30A00724AE9 /* Screen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
