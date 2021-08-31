@@ -103,9 +103,11 @@ void BreakOut::Draw(Screen& screen)
     mPaddle.Draw(screen);
 }
 
-std::string BreakOut::GetName() const
+const std::string& BreakOut::GetName() const
 {
-    return "Break Out!";
+    static std::string name = "Break Out!";
+    
+    return name;
 }
 
 void BreakOut::ResetGame()
