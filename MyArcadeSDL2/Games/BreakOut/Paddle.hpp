@@ -16,9 +16,8 @@ class Screen;
 
 enum PaddleDirection
 {
-    NONE = 0,
-    LEFT,
-    RIGHT
+    LEFT = 1 << 0,
+    RIGHT = 1 << 1
 };
 
 class Paddle : public Excluder
@@ -37,14 +36,15 @@ public:
     inline bool IsMovingLeft() const {return mDirection == PaddleDirection::LEFT;}
     inline bool IsMovingRight() const {return mDirection == PaddleDirection::RIGHT;}
     
-    inline void SetMovementDirection(PaddleDirection dir) {mDirection = dir;}
-    inline void StopMovement() {mDirection = PaddleDirection::NONE;}
+    inline void SetMovementDirection(PaddleDirection dir) {mDirection |= dir;}
+    inline void UnsetMovementDirection(PaddleDirection dir) {mDirection &= ~dir;}
+    inline void StopMovement() {mDirection = 0;}
     
 private:
     
     const float VELOCITY = 100.0f;      // pixels / second
     
-    PaddleDirection mDirection;         // direction we are moving
+    uint32_t mDirection;                // direction we are moving
     
     AARectangle mBoundary;              // boundary that the paddle is confined to
 };

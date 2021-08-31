@@ -69,7 +69,7 @@ void BreakOut::Init(GameController& controller)
         }
         else
         {
-            mPaddle.SetMovementDirection(PaddleDirection::NONE);
+            mPaddle.UnsetMovementDirection(PaddleDirection::LEFT);
         }
     };
     
@@ -86,7 +86,7 @@ void BreakOut::Init(GameController& controller)
         }
         else
         {
-            mPaddle.SetMovementDirection(PaddleDirection::NONE);
+            mPaddle.UnsetMovementDirection(PaddleDirection::RIGHT);
         }
     };
     
