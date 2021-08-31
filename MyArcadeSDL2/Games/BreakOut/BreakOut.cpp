@@ -95,11 +95,13 @@ void BreakOut::Init(GameController& controller)
 
 void BreakOut::Update(uint32_t dt)
 {
+    mBall.Update(dt);
     mPaddle.Update(dt);
 }
 
 void BreakOut::Draw(Screen& screen)
 {
+    mBall.Draw(screen);
     mPaddle.Draw(screen);
 }
 
@@ -116,4 +118,5 @@ void BreakOut::ResetGame()
     AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
     
     mPaddle.Init(paddleRect, levelBoundary);
+    mBall.MoveTo(Vec2D(App::Singleton().Width()/2.0f, App::Singleton().Height()/2.0f));
 }

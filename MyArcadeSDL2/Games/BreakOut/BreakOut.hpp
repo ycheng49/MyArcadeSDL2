@@ -10,6 +10,7 @@
 
 #include "Game.hpp"
 #include "Paddle.hpp"
+#include "Ball.hpp"
 
 class BreakOut : public Game
 {
@@ -25,6 +26,7 @@ private:
     void ResetGame();
     
     Paddle mPaddle;
+    Ball mBall;
 };
 
 #endif /* BreakOut_hpp */

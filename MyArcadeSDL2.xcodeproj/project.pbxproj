@@ -28,6 +28,7 @@
 		51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32C26DDC22A000FE171 /* BreakOut.cpp */; };
 		51FBD33526DDD097000FE171 /* Excluder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33326DDD097000FE171 /* Excluder.cpp */; };
 		51FBD33B26DE70CD000FE171 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33926DE70CD000FE171 /* Paddle.cpp */; };
+		51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33C26DEC295000FE171 /* Ball.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +89,8 @@
 		51FBD33726DDD195000FE171 /* BoundaryEdge.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoundaryEdge.hpp; sourceTree = "<group>"; };
 		51FBD33926DE70CD000FE171 /* Paddle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
 		51FBD33A26DE70CD000FE171 /* Paddle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Paddle.hpp; sourceTree = "<group>"; };
+		51FBD33C26DEC295000FE171 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		51FBD33D26DEC295000FE171 /* Ball.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ball.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,8 @@
 				51FBD33726DDD195000FE171 /* BoundaryEdge.hpp */,
 				51FBD33926DE70CD000FE171 /* Paddle.cpp */,
 				51FBD33A26DE70CD000FE171 /* Paddle.hpp */,
+				51FBD33C26DEC295000FE171 /* Ball.cpp */,
+				51FBD33D26DEC295000FE171 /* Ball.hpp */,
 			);
 			path = BreakOut;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
+				51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */,
 				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,
 				512A602E26D8892300994554 /* Shape.cpp in Sources */,
 				51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */,
