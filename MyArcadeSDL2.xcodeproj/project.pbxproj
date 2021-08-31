@@ -25,6 +25,7 @@
 		51FBD32126DC324E000FE171 /* InputController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD31F26DC324E000FE171 /* InputController.cpp */; };
 		51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32626DC7F63000FE171 /* GameScene.cpp */; };
 		51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */; };
+		51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD32C26DDC22A000FE171 /* BreakOut.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +79,8 @@
 		51FBD32726DC7F63000FE171 /* GameScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameScene.hpp; sourceTree = "<group>"; };
 		51FBD32926DD1F23000FE171 /* FileCommandLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileCommandLoader.cpp; sourceTree = "<group>"; };
 		51FBD32A26DD1F23000FE171 /* FileCommandLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileCommandLoader.hpp; sourceTree = "<group>"; };
+		51FBD32C26DDC22A000FE171 /* BreakOut.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BreakOut.cpp; sourceTree = "<group>"; };
+		51FBD32D26DDC22A000FE171 /* BreakOut.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BreakOut.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				51FBD32426DC7ED6000FE171 /* Game.hpp */,
+				51FBD32C26DDC22A000FE171 /* BreakOut.cpp */,
+				51FBD32D26DDC22A000FE171 /* BreakOut.hpp */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
 				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,
 				512A602E26D8892300994554 /* Shape.cpp in Sources */,
+				51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */,
 				51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */,
 				512A603426D8910C00994554 /* AARectangle.cpp in Sources */,
 				514681EC26D4858000188839 /* Utils.cpp in Sources */,
