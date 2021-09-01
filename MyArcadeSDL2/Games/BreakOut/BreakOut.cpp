@@ -51,6 +51,7 @@
 #include "BreakOut.hpp"
 #include "GameController.hpp"
 #include "App.hpp"
+#include "Circle.hpp"
 
 void BreakOut::Init(GameController& controller)
 {
@@ -163,6 +164,26 @@ void BreakOut::Update(uint32_t dt)
         }
         
         GetCurrentLevel().Update(dt, mBall);
+        
+        if(IsBallPassedCutOffY())
+        {
+            ReduceLifeByOne();
+            
+            if(!IsGameOver())
+            {
+                SetToServeState();
+            }
+            else
+            {
+                mGameState = IN_GAME_OVER;
+            }
+        }
+        else if(GetCurrentLevel().IsLevelComplete())
+        {
+            mCurrentLevel = (mCurrentLevel + 1) & mLevels.size();
+            
+            ResetGame(mCurrentLevel);
+        }
     }
 }
 
@@ -173,6 +194,15 @@ void BreakOut::Draw(Screen& screen)
     GetCurrentLevel().Draw(screen);
     
     screen.Draw(mLevelBoundary.GetAARectangle(), Color::White());
+    
+    Circle lifeCircle = {Vec2D(5 + 2, App::Singleton().Height() - 10), 5};
+    
+    for(int i = 0; i < mLives; i++)
+    {
+        screen.Draw(lifeCircle, Color::Red(), true, Color::Red());
+        
+        lifeCircle.MoveBy(Vec2D(17, 0));
+    }
 }
 
 const std::string& BreakOut::GetName() const
@@ -182,11 +212,13 @@ const std::string& BreakOut::GetName() const
     return name;
 }
 
-void BreakOut::ResetGame()
+void BreakOut::ResetGame(size_t toLevel)
 {
     mLevels = BreakOutGameLevel::LoadLevelsFromFile(App::GetBasePath() + "Assets/BreakOutLevels.txt");
     
-    mCurrentLevel = 2;
+    mYCutOff = App::Singleton().Height() - 2 * Paddle::PADDLE_HEIGHT;
+    mLives = NUM_LIVES;
+    mCurrentLevel = toLevel;
     
     AARectangle paddleRect = {Vec2D(App::Singleton().Width()/2 - Paddle::PADDLE_WIDTH/2, App::Singleton().Height() - 3*Paddle::PADDLE_HEIGHT), Paddle::PADDLE_WIDTH, Paddle::PADDLE_HEIGHT};
     AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
@@ -206,4 +238,17 @@ void BreakOut::SetToServeState()
     
     mBall.Stop();
     mBall.MoveTo(Vec2D(mPaddle.GetAARectangle().GetCenterPoint().GetX(), mPaddle.GetAARectangle().GetTopLeftPoint().GetY() - mBall.GetRadius() - 1));
+}
+
+bool BreakOut::IsBallPassedCutOffY() const
+{
+    return mBall.GetPosition().GetY() > mYCutOff;
+}
+
+void BreakOut::ReduceLifeByOne()
+{
+    if(mLives >= 0)
+    {
+        mLives--;
+    }
 }
