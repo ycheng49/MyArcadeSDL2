@@ -31,7 +31,12 @@ public:
     
     void Draw(Screen& screen);
     
+    static std::vector<BreakOutGameLevel> LoadLevelsFromFile(const std::string& filePath);
+    
 private:
+    
+    static const int BLOCK_WIDTH = 16;
+    static const int BLOCK_HEIGHT = 8;
     
     void CreateDefaultLevel(const AARectangle& boundary);
     

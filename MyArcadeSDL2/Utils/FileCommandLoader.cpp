@@ -48,7 +48,7 @@ bool FileCommandLoader::LoadFile(const std::string& filePath)
             }
             else
             {
-                dilimitPos = -1;
+                dilimitPos -= 1;
             }
             
             std::string commandStr = line.substr(commandPos + 1, dilimitPos);
@@ -117,6 +117,8 @@ Color FileCommandLoader::ReadColor(const ParseFuncParams& params)
     nextSpacePos = params.line.find_first_of(" ", lastSpacePos + 1);
     
     int g = std::stoi(params.line.substr(lastSpacePos + 1, nextSpacePos - lastSpacePos));
+    
+    lastSpacePos = nextSpacePos;
     
     nextSpacePos = params.line.find_first_of(" ", lastSpacePos + 1);
     

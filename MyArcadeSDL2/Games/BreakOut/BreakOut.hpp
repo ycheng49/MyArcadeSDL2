@@ -8,6 +8,8 @@
 #ifndef BreakOut_hpp
 #define BreakOut_hpp
 
+#include <vector>
+
 #include "Game.hpp"
 #include "Paddle.hpp"
 #include "Ball.hpp"
@@ -27,12 +29,15 @@ private:
     
     void ResetGame();
     
+    BreakOutGameLevel& GetCurrentLevel() {return mLevels[mCurrentLevel];}
+    
     const Vec2D INITIAL_BALL_VEL = Vec2D(100, -100);
     
     Paddle mPaddle;
     Ball mBall;
     LevelBoundary mLevelBoundary;
-    BreakOutGameLevel mLevel;
+    std::vector<BreakOutGameLevel> mLevels;
+    size_t mCurrentLevel;
 };
 
 #endif /* BreakOut_hpp */

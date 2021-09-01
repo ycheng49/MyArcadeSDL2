@@ -113,14 +113,14 @@ void BreakOut::Update(uint32_t dt)
         return;
     }
     
-    mLevel.Update(dt, mBall);
+    GetCurrentLevel().Update(dt, mBall);
 }
 
 void BreakOut::Draw(Screen& screen)
 {
     mBall.Draw(screen);
     mPaddle.Draw(screen);
-    mLevel.Draw(screen);
+    GetCurrentLevel().Draw(screen);
     
     screen.Draw(mLevelBoundary.GetAARectangle(), Color::White());
 }
@@ -134,6 +134,10 @@ const std::string& BreakOut::GetName() const
 
 void BreakOut::ResetGame()
 {
+    mLevels = BreakOutGameLevel::LoadLevelsFromFile(App::GetBasePath() + "Assets/BreakOutLevels.txt");
+    
+    mCurrentLevel = 1;
+    
     AARectangle paddleRect = {Vec2D(App::Singleton().Width()/2 - Paddle::PADDLE_WIDTH/2, App::Singleton().Height() - 3*Paddle::PADDLE_HEIGHT), Paddle::PADDLE_WIDTH, Paddle::PADDLE_HEIGHT};
     AARectangle levelBoundary = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
     
@@ -141,8 +145,6 @@ void BreakOut::ResetGame()
     
     mPaddle.Init(paddleRect, levelBoundary);
     
-    mBall.MoveTo(Vec2D(App::Singleton().Width()/2.0f, App::Singleton().Height()/2.0f));
+    mBall.MoveTo(Vec2D(App::Singleton().Width()/2.0f, App::Singleton().Height() * 0.75f));
     mBall.SetVelocity(INITIAL_BALL_VEL);
-    
-    mLevel.Init(levelBoundary);
 }
