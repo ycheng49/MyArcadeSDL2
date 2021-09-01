@@ -30,6 +30,7 @@
 		51FBD33B26DE70CD000FE171 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33926DE70CD000FE171 /* Paddle.cpp */; };
 		51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33C26DEC295000FE171 /* Ball.cpp */; };
 		51FBD34126DECF6D000FE171 /* LevelBoundary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33F26DECF6D000FE171 /* LevelBoundary.cpp */; };
+		51FBD34426DF0937000FE171 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD34226DF0937000FE171 /* Block.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +95,8 @@
 		51FBD33D26DEC295000FE171 /* Ball.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ball.hpp; sourceTree = "<group>"; };
 		51FBD33F26DECF6D000FE171 /* LevelBoundary.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelBoundary.cpp; sourceTree = "<group>"; };
 		51FBD34026DECF6D000FE171 /* LevelBoundary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LevelBoundary.hpp; sourceTree = "<group>"; };
+		51FBD34226DF0937000FE171 /* Block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		51FBD34326DF0937000FE171 /* Block.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Block.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 				51FBD33D26DEC295000FE171 /* Ball.hpp */,
 				51FBD33F26DECF6D000FE171 /* LevelBoundary.cpp */,
 				51FBD34026DECF6D000FE171 /* LevelBoundary.hpp */,
+				51FBD34226DF0937000FE171 /* Block.cpp */,
+				51FBD34326DF0937000FE171 /* Block.hpp */,
 			);
 			path = BreakOut;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 				51F9D8B026D1E37A00B4CAAC /* main.cpp in Sources */,
 				51FBD31E26DC2973000FE171 /* GameController.cpp in Sources */,
 				51FBD34126DECF6D000FE171 /* LevelBoundary.cpp in Sources */,
+				51FBD34426DF0937000FE171 /* Block.cpp in Sources */,
 				51FBD31726DBF5B3000FE171 /* ArcadeScene.cpp in Sources */,
 				51FBD30C26DB3BA4000FE171 /* App.cpp in Sources */,
 				512A603126D88AD100994554 /* Triangle.cpp in Sources */,
