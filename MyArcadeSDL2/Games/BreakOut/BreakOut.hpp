@@ -12,6 +12,7 @@
 #include "Paddle.hpp"
 #include "Ball.hpp"
 #include "LevelBoundary.hpp"
+#include "BreakOutGameLevel.hpp"
 
 class BreakOut : public Game
 {
@@ -31,6 +32,7 @@ private:
     Paddle mPaddle;
     Ball mBall;
     LevelBoundary mLevelBoundary;
+    BreakOutGameLevel mLevel;
 };
 
 #endif /* BreakOut_hpp */

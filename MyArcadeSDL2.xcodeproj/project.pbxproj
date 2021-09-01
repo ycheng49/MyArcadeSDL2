@@ -31,6 +31,7 @@
 		51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33C26DEC295000FE171 /* Ball.cpp */; };
 		51FBD34126DECF6D000FE171 /* LevelBoundary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD33F26DECF6D000FE171 /* LevelBoundary.cpp */; };
 		51FBD34426DF0937000FE171 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD34226DF0937000FE171 /* Block.cpp */; };
+		51FBD34726DF0F5B000FE171 /* BreakOutGameLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51FBD34526DF0F5B000FE171 /* BreakOutGameLevel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,6 +98,8 @@
 		51FBD34026DECF6D000FE171 /* LevelBoundary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LevelBoundary.hpp; sourceTree = "<group>"; };
 		51FBD34226DF0937000FE171 /* Block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
 		51FBD34326DF0937000FE171 /* Block.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Block.hpp; sourceTree = "<group>"; };
+		51FBD34526DF0F5B000FE171 /* BreakOutGameLevel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BreakOutGameLevel.cpp; sourceTree = "<group>"; };
+		51FBD34626DF0F5B000FE171 /* BreakOutGameLevel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BreakOutGameLevel.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,8 @@
 				51FBD34026DECF6D000FE171 /* LevelBoundary.hpp */,
 				51FBD34226DF0937000FE171 /* Block.cpp */,
 				51FBD34326DF0937000FE171 /* Block.hpp */,
+				51FBD34526DF0F5B000FE171 /* BreakOutGameLevel.cpp */,
+				51FBD34626DF0F5B000FE171 /* BreakOutGameLevel.hpp */,
 			);
 			path = BreakOut;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */,
 				51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
+				51FBD34726DF0F5B000FE171 /* BreakOutGameLevel.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
 				51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */,
 				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,

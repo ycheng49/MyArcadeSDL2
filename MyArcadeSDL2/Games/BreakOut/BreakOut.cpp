@@ -112,12 +112,15 @@ void BreakOut::Update(uint32_t dt)
         
         return;
     }
+    
+    mLevel.Update(dt, mBall);
 }
 
 void BreakOut::Draw(Screen& screen)
 {
     mBall.Draw(screen);
     mPaddle.Draw(screen);
+    mLevel.Draw(screen);
     
     screen.Draw(mLevelBoundary.GetAARectangle(), Color::White());
 }
@@ -140,4 +143,6 @@ void BreakOut::ResetGame()
     
     mBall.MoveTo(Vec2D(App::Singleton().Width()/2.0f, App::Singleton().Height()/2.0f));
     mBall.SetVelocity(INITIAL_BALL_VEL);
+    
+    mLevel.Init(levelBoundary);
 }
