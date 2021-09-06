@@ -22,8 +22,6 @@ ArcadeScene::ArcadeScene()
 
 void ArcadeScene::Init()
 {
-    mTempSS.Load("ArcadeFont");
-    
     // test keyboard action button 'a'
     ButtonAction action;
     
@@ -64,7 +62,15 @@ void ArcadeScene::Update(uint32_t dt)
 
 void ArcadeScene::Draw(Screen& theScreen)
 {
-    theScreen.Draw(mTempSS, "9", Vec2D::Zero);
+    const BitmapFont& font = App::Singleton().GetFont();
+    
+    AARectangle rect = {Vec2D::Zero, App::Singleton().Width(), App::Singleton().Height()};
+    
+    Vec2D textDrawPosition;
+    
+    textDrawPosition = font.GetDrawPosition(GetSceneName(), rect, BFXA_CENTER, BFYA_CENTER);
+    
+    theScreen.Draw(font, GetSceneName(), textDrawPosition);
 }
 
 const std::string& ArcadeScene::GetSceneName() const

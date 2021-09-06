@@ -11,7 +11,6 @@
 #include <memory>
 
 #include "Scene.hpp"
-#include "SpriteSheet.hpp"
 
 enum eGame
 {
@@ -38,9 +37,6 @@ public:
 private:
     
     std::unique_ptr<Scene> GetScene(eGame game);
-    
-    // temporary
-    SpriteSheet mTempSS;
 };
 
 #endif /* ArcadeScene_hpp */

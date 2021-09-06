@@ -27,4 +27,9 @@ unsigned int GetIndex(unsigned int width, unsigned int r, unsigned int c);
 
 bool StringCompare(const std::string& a, const std::string& b);
 
+struct Size
+{
+    unsigned int width = 0, height = 0;
+};
+
 #endif /* Utils_hpp */

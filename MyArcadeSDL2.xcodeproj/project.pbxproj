@@ -12,6 +12,7 @@
 		512A603126D88AD100994554 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A602F26D88AD100994554 /* Triangle.cpp */; };
 		512A603426D8910C00994554 /* AARectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A603226D8910C00994554 /* AARectangle.cpp */; };
 		512A603726D89E8F00994554 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A603526D89E8F00994554 /* Circle.cpp */; };
+		513C9CA126E6B6F0005BDA85 /* BitmapFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 513C9C9F26E6B6F0005BDA85 /* BitmapFont.cpp */; };
 		514681E926D4817100188839 /* Vec2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681E726D4817100188839 /* Vec2D.cpp */; };
 		514681EC26D4858000188839 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681EA26D4858000188839 /* Utils.cpp */; };
 		518E9A2A26E6460B005D1ECB /* BMPImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518E9A2826E6460B005D1ECB /* BMPImage.cpp */; };
@@ -59,6 +60,8 @@
 		512A603326D8910C00994554 /* AARectangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AARectangle.hpp; sourceTree = "<group>"; };
 		512A603526D89E8F00994554 /* Circle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
 		512A603626D89E8F00994554 /* Circle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Circle.hpp; sourceTree = "<group>"; };
+		513C9C9F26E6B6F0005BDA85 /* BitmapFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BitmapFont.cpp; sourceTree = "<group>"; };
+		513C9CA026E6B6F0005BDA85 /* BitmapFont.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BitmapFont.hpp; sourceTree = "<group>"; };
 		514681E726D4817100188839 /* Vec2D.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2D.cpp; sourceTree = "<group>"; };
 		514681E826D4817100188839 /* Vec2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vec2D.hpp; sourceTree = "<group>"; };
 		514681EA26D4858000188839 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				518E9A2926E6460B005D1ECB /* BMPImage.hpp */,
 				518E9A2B26E65453005D1ECB /* SpriteSheet.cpp */,
 				518E9A2C26E65453005D1ECB /* SpriteSheet.hpp */,
+				513C9C9F26E6B6F0005BDA85 /* BitmapFont.cpp */,
+				513C9CA026E6B6F0005BDA85 /* BitmapFont.hpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				51FBD32B26DD1F23000FE171 /* FileCommandLoader.cpp in Sources */,
 				51FBD32826DC7F63000FE171 /* GameScene.cpp in Sources */,
 				512A603726D89E8F00994554 /* Circle.cpp in Sources */,
+				513C9CA126E6B6F0005BDA85 /* BitmapFont.cpp in Sources */,
 				51FBD34726DF0F5B000FE171 /* BreakOutGameLevel.cpp in Sources */,
 				518E9A2D26E65453005D1ECB /* SpriteSheet.cpp in Sources */,
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,

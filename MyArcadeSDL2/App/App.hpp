@@ -15,6 +15,7 @@
 #include "Screen.hpp"
 #include "Scene.hpp"
 #include "InputController.hpp"
+#include "BitmapFont.hpp"
 
 struct SDL_Window;
 
@@ -37,6 +38,8 @@ public:
     
     static const std::string& GetBasePath();
     
+    inline const BitmapFont& GetFont() const {return mFont;}
+    
 private:
     
     Screen mScreen;
@@ -44,6 +47,8 @@ private:
     
     std::vector<std::unique_ptr<Scene>> mSceneStack;
     InputController mInputController;
+    
+    BitmapFont mFont;
 };
 
 #endif /* App_hpp */
