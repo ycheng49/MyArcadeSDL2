@@ -14,6 +14,7 @@
 		512A603726D89E8F00994554 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 512A603526D89E8F00994554 /* Circle.cpp */; };
 		514681E926D4817100188839 /* Vec2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681E726D4817100188839 /* Vec2D.cpp */; };
 		514681EC26D4858000188839 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514681EA26D4858000188839 /* Utils.cpp */; };
+		518E9A2A26E6460B005D1ECB /* BMPImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518E9A2826E6460B005D1ECB /* BMPImage.cpp */; };
 		51D11DD026D6C3CC00724AE9 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */; };
 		51D11DD426D726B400724AE9 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51D11DD226D726B400724AE9 /* Color.cpp */; };
 		51D11DD726D73B7D00724AE9 /* ScreenBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51D11DD526D73B7D00724AE9 /* ScreenBuffer.cpp */; };
@@ -61,6 +62,8 @@
 		514681E826D4817100188839 /* Vec2D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vec2D.hpp; sourceTree = "<group>"; };
 		514681EA26D4858000188839 /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		514681EB26D4858000188839 /* Utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
+		518E9A2826E6460B005D1ECB /* BMPImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BMPImage.cpp; sourceTree = "<group>"; };
+		518E9A2926E6460B005D1ECB /* BMPImage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BMPImage.hpp; sourceTree = "<group>"; };
 		51D11DCF26D6C3CC00724AE9 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2/2.0.16/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		51D11DD226D726B400724AE9 /* Color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
 		51D11DD326D726B400724AE9 /* Color.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				51D11DD626D73B7D00724AE9 /* ScreenBuffer.hpp */,
 				51D11DD826D7C30A00724AE9 /* Screen.cpp */,
 				51D11DD926D7C30A00724AE9 /* Screen.hpp */,
+				518E9A2826E6460B005D1ECB /* BMPImage.cpp */,
+				518E9A2926E6460B005D1ECB /* BMPImage.hpp */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				512A602B26D7E48200994554 /* Line2D.cpp in Sources */,
 				51FBD33E26DEC295000FE171 /* Ball.cpp in Sources */,
 				51FBD32126DC324E000FE171 /* InputController.cpp in Sources */,
+				518E9A2A26E6460B005D1ECB /* BMPImage.cpp in Sources */,
 				512A602E26D8892300994554 /* Shape.cpp in Sources */,
 				51FBD32E26DDC22A000FE171 /* BreakOut.cpp in Sources */,
 				51FBD33B26DE70CD000FE171 /* Paddle.cpp in Sources */,

@@ -15,12 +15,15 @@
 #include "Line2D.hpp"
 #include "Color.hpp"
 #include "GameController.hpp"
+#include "App.hpp"
 
 ArcadeScene::ArcadeScene()
 {}
 
 void ArcadeScene::Init()
 {
+    mTempImage.Load(App::Singleton().GetBasePath() + "Assets/ArcadeFont.bmp");
+    
     // test keyboard action button 'a'
     ButtonAction action;
     
@@ -61,15 +64,7 @@ void ArcadeScene::Update(uint32_t dt)
 
 void ArcadeScene::Draw(Screen& theScreen)
 {
-    Line2D line = {Vec2D(0,0), Vec2D(theScreen.Width(), theScreen.Height())};
-    Triangle triangle = {Vec2D(60, 10), Vec2D(10, 110), Vec2D(110, 110)};
-    AARectangle rect = {Vec2D(theScreen.Width() / 2 - 25, theScreen.Height() / 2 - 25), 50, 50};
-    Circle circle = {Vec2D(theScreen.Width() / 2 + 50, theScreen.Height() / 2 + 50), 50};
-    
-    theScreen.Draw(line, Color::White());
-    theScreen.Draw(triangle, Color::Red(), true, Color::Red());
-    theScreen.Draw(rect, Color::Blue(), true, Color(0, 0, 255, 140));
-    theScreen.Draw(circle, Color(0, 255, 0, 150), true, Color(0, 255, 0, 150));
+    theScreen.Draw(mTempImage, Vec2D::Zero);
 }
 
 const std::string& ArcadeScene::GetSceneName() const
