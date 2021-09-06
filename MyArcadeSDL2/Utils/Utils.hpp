@@ -8,6 +8,8 @@
 #ifndef Utils_hpp
 #define Utils_hpp
 
+#include <string>
+
 static const float EPSILON = 0.0001f;
 
 const float PI = 3.14159f;
@@ -22,5 +24,7 @@ bool IsLessThanOrEqual(float x, float y);
 float MillisecondsToSeconds(unsigned int milliseconds);
 
 unsigned int GetIndex(unsigned int width, unsigned int r, unsigned int c);
+
+bool StringCompare(const std::string& a, const std::string& b);
 
 #endif /* Utils_hpp */

@@ -11,7 +11,7 @@
 #include <memory>
 
 #include "Scene.hpp"
-#include "BMPImage.hpp"
+#include "SpriteSheet.hpp"
 
 enum eGame
 {
@@ -40,7 +40,7 @@ private:
     std::unique_ptr<Scene> GetScene(eGame game);
     
     // temporary
-    BMPImage mTempImage;
+    SpriteSheet mTempSS;
 };
 
 #endif /* ArcadeScene_hpp */
