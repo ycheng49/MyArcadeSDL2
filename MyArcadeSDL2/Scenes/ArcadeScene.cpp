@@ -70,7 +70,7 @@ void ArcadeScene::Draw(Screen& theScreen)
     
     textDrawPosition = font.GetDrawPosition(GetSceneName(), rect, BFXA_CENTER, BFYA_CENTER);
     
-    theScreen.Draw(font, GetSceneName(), textDrawPosition);
+    theScreen.Draw(font, GetSceneName(), textDrawPosition, Color::Red());
 }
 
 const std::string& ArcadeScene::GetSceneName() const
