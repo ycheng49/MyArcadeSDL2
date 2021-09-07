@@ -21,13 +21,31 @@
 #include "SpriteSheet.hpp"
 #include "BitmapFont.hpp"
 
-Screen::Screen(): mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr)
+Screen::Screen(): mWidth(0), mHeight(0), moptrWindow(nullptr), mnoptrWindowSurface(nullptr), mRenderer(nullptr), mPixelFormat(nullptr), mTexture(nullptr), mFast(true)
 {
     
 }
 
 Screen::~Screen()
 {
+    if(mPixelFormat)
+    {
+        SDL_FreeFormat(mPixelFormat);
+        mPixelFormat = nullptr;
+    }
+    
+    if(mTexture)
+    {
+        SDL_DestroyTexture(mTexture);
+        mTexture = nullptr;
+    }
+    
+    if(mRenderer)
+    {
+        SDL_DestroyRenderer(mRenderer);
+        mRenderer = nullptr;
+    }
+    
     if(moptrWindow)
     {
         SDL_DestroyWindow(moptrWindow);
@@ -37,8 +55,10 @@ Screen::~Screen()
     SDL_Quit();
 }
 
-SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
+SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag, bool fast)
 {
+    mFast = fast;
+    
     if(SDL_Init(SDL_INIT_VIDEO))
     {
         std::cout << "Error SDL_Init Failed" << std::endl;
@@ -53,15 +73,40 @@ SDL_Window* Screen::Init(uint32_t w, uint32_t h, uint32_t mag)
     
     if(moptrWindow)
     {
-        mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
+        uint8_t rClear = 0;
+        uint8_t gClear = 0;
+        uint8_t bClear = 0;
+        uint8_t aClear = 255;
         
-        SDL_PixelFormat* pixelFormat = mnoptrWindowSurface->format;
+        if(mFast)
+        {
+            mRenderer = SDL_CreateRenderer(moptrWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+            
+            if(mRenderer == nullptr)
+            {
+                std::cout << "SDL_CreateRenderer failed" << std::endl;
+                return nullptr;
+            }
+            
+            SDL_SetRenderDrawColor(mRenderer, rClear, gClear, bClear, aClear);
+        }
+        else
+        {
+            mnoptrWindowSurface = SDL_GetWindowSurface(moptrWindow);
+        }
         
-        Color::InitColorFormat(pixelFormat);
+        mPixelFormat = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
         
-        mClearColor = Color::Black();
+        if(mFast)
+        {
+            mTexture = SDL_CreateTexture(mRenderer, mPixelFormat->format, SDL_TEXTUREACCESS_STREAMING, w, h);
+        }
         
-        mBackBuffer.Init(pixelFormat->format, mWidth, mHeight);
+        Color::InitColorFormat(mPixelFormat);
+        
+        mClearColor = Color(rClear, gClear, bClear, aClear);
+        
+        mBackBuffer.Init(mPixelFormat->format, mWidth, mHeight);
         
         mBackBuffer.Clear(mClearColor);
     }
@@ -78,12 +123,34 @@ void Screen::SwapScreens()
         // clear the current front facing surface
         ClearScreen();
         
-        // copy content from one surface to another surcace
-        // use BlitScaled method to scale the back buffer content to the front window
-        SDL_BlitScaled(mBackBuffer.GetSurface(), nullptr, mnoptrWindowSurface, nullptr);
-                                
-        // actually draw the surface
-        SDL_UpdateWindowSurface(moptrWindow);
+        if(mFast)
+        {
+            uint8_t* textureData = nullptr;
+            
+            int texturePitch = 0;
+            
+            if(SDL_LockTexture(mTexture, nullptr, (void**)&textureData, &texturePitch) >= 0)
+            {
+                SDL_Surface* surface = mBackBuffer.GetSurface();
+                
+                memcpy(textureData, surface->pixels, surface->w * surface->h * mPixelFormat->BytesPerPixel);
+                
+                SDL_UnlockTexture(mTexture);
+                
+                SDL_RenderCopy(mRenderer, mTexture, nullptr, nullptr);
+                
+                SDL_RenderPresent(mRenderer);
+            }
+        }
+        else
+        {
+            // copy content from one surface to another surcace
+            // use BlitScaled method to scale the back buffer content to the front window
+            SDL_BlitScaled(mBackBuffer.GetSurface(), nullptr, mnoptrWindowSurface, nullptr);
+                                    
+            // actually draw the surface
+            SDL_UpdateWindowSurface(moptrWindow);
+        }
         
         mBackBuffer.Clear(mClearColor);
     }
@@ -335,7 +402,14 @@ void Screen::ClearScreen()
     
     if(moptrWindow)
     {
-        SDL_FillRect(mnoptrWindowSurface, nullptr, mClearColor.GetPixelColor());
+        if(mFast)
+        {
+            SDL_RenderClear(mRenderer);
+        }
+        else
+        {
+            SDL_FillRect(mnoptrWindowSurface, nullptr, mClearColor.GetPixelColor());
+        }
     }
 }
 
