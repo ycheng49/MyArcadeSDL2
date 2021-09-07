@@ -10,6 +10,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <functional>
 
 #include "ScreenBuffer.hpp"
 #include "Color.hpp"
@@ -59,7 +60,10 @@ private:
     Screen& operator=(const Screen& screen);
     
     void ClearScreen();
-    void FillPoly(const std::vector<Vec2D>& points, const Color& color);
+    
+    using FillpolyFunc = std::function<Color(uint32_t x, uint32_t y)>;
+    
+    void FillPoly(const std::vector<Vec2D>& points, FillpolyFunc func);
     
     uint32_t mWidth;
     uint32_t mHeight;
